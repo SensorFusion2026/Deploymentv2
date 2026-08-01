@@ -1,0 +1,11 @@
+.venv/
+**/.venv/
+__pycache__/
+*.pyc
+*.keras
+*.tflite
+*.dylib
+*.so
+*.o
+test_spectrogram_parity
+runtime/spectrogram_parity/out/

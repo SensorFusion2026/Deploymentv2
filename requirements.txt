@@ -1,0 +1,25 @@
+# Python deps for the build-world tools (parity check now; training/conversion
+# later). Workstation only — the deployed C runtime needs none of this.
+#
+# Versions match the training repo (ELP-Rumble-Detector pyproject.toml) so the
+# parity ground truth uses the same tf.signal behavior the model trained with.
+#
+# Requires Python 3.10 or 3.11 (TensorFlow 2.15 has no wheels for 3.12+).
+#
+# Setup:
+#   python3.10 -m venv .venv
+#   source .venv/bin/activate        # Windows: .venv\Scripts\activate
+#   python -m pip install -r requirements.txt
+
+# base
+python-dotenv
+numpy<2
+pandas
+scipy
+scikit-learn
+matplotlib
+
+# full
+tensorflow==2.15.0
+tensorboard==2.15.2
+jupyter

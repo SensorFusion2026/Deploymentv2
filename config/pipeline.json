@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "detector_id": "rumble_model3",
+  "audio": {
+    "capture_sr": 44100,
+    "target_sr": 4000,
+    "clip_len_s": 5.0,
+    "channels": 1,
+    "resample": "linear",
+    "normalize": "global_zscore",
+    "audio_norm_mean": -0.013995947316288948,
+    "audio_norm_std": 0.017343521118164062
+  },
+  "spectrogram": {
+    "frame_length": 2000,
+    "frame_step": 32,
+    "fft_length": 2048,
+    "window": "hann_periodic",
+    "pad_end": false,
+    "bin_start": 2,
+    "bin_end": 100,
+    "magnitude": "abs",
+    "log": "log_plus_eps",
+    "log_eps": 1e-10,
+    "normalize": "global_zscore",
+    "spec_norm_mean": 2.7122833728790283,
+    "spec_norm_std": 1.0036183595657349,
+    "norm_source": "ELP-Rumble-Detector model3 + deployment model-weights/normalization.json",
+    "output_shape": [
+      563,
+      98,
+      1
+    ]
+  },
+  "model": {
+    "path": "models/rumble_model3.tflite",
+    "precision": "CONFIRM_fp16_or_int8",
+    "input_shape": [
+      1,
+      563,
+      98,
+      1
+    ],
+    "output": "sigmoid_probability",
+    "labels": [
+      "non_rumble",
+      "rumble"
+    ]
+  },
+  "detector": {
+    "threshold": 0.5,
+    "positive_label": "rumble"
+  },
+  "device": {
+    "device_id": "sensor-01",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  "output": {
+    "save_clips": true,
+    "save_dir": "recordings"
+  }
+}

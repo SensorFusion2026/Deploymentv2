@@ -1,0 +1,12 @@
+sample_rate 4000
+clip_len_s 5.0
+audio_mean -0.013995947316288948
+audio_std 0.017343521118164062
+frame_length 2000
+frame_step 32
+fft_length 2048
+bin_start 2
+bin_end 100
+log_eps 1e-10
+spec_mean 2.7122833728790283
+spec_std 1.0036183595657349
